@@ -23,7 +23,7 @@ jobs:
 
       # Render the rmarkdown file into rmd/
       - name: run Rscript
-        shell: Rscript {0}
-        run: Rscript news_api_script.R
+        run: |
+          Rscript news_api_script.R
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY}}
