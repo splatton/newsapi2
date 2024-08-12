@@ -21,6 +21,11 @@ jobs:
       # Install R packages
       - uses: r-lib/actions/setup-r-dependencies@v2
 
+      - name: Install R packages
+        run: |
+          R -e "install.packages(c('httr2', 'jsonlite', 'dplyr'), repos='https://cloud.r-project.org/')"
+
+
       # Render the rmarkdown file into rmd/
       - name: run Rscript
         run: |
